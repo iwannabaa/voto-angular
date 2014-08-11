@@ -1,0 +1,44 @@
+<section id="candidate">
+	<h1 class="main-title">Perfil <strong>Candidato</strong></h1>
+	<div class="candidate-info">
+		<div class="img-container recommendations__recommendation__img-container candidate-color-{{candidate.id}}">
+			<img ng-src="{{candidate.img}}" alt="{{candidate.name}}" width="86" height="86">
+		</div>
+		<div class="candidate-info__data">
+			<h2 class="cadidate__name candidate-color-{{candidate.id}}">{{candidate.name}}</h2>
+			<h3 class="candidate__party candidate-color-{{candidate.id}}">{{candidate.party}}</h3>
+			<p class="candidate__catchword">{{candidate.catchword}}</p>
+		</div>
+	</div>
+	<nav class="app-nav">
+		<button ng-click="goTo('start-poll')">Encuentre su Candidato</button>
+		<button ng-click="goTo('candidates')" class="view-candidates">Ver Candidatos</button>
+	</nav>
+	<article class="tabs__container">
+		<div class="tabs__nav">
+			<button ng-click="tab=0" class="{{tab==0?'active':''}}">Propuestas</button>
+			<button ng-click="tab=1" class="{{tab==1?'active':''}}">Respuestas</button>
+		</div>
+		<div class="content" ng-hide="tab!=0">
+		<div ng-hide=""></div>
+			{{candidate.proposals ? candidate.proposals : 'No se han agregado propuestas para este candidato'}}
+		</div>
+		<div class="content" ng-hide="tab!=1">
+			<ol class="answers">
+				<li ng-repeat="response in candidate.responses track by $index">
+					<h4 class="question">{{questions[$index].question}}</h4>
+					<p class="response">{{response === true ? 'Si' : ( response === false ? 'No' : '-' ) }}</p>
+					<p class="explanation" ng-hide="!candidate.explanations[$index]">{{candidate.explanations[$index]}}</p>
+				</li>
+			</ol>
+		</div>
+	</article>
+    <footer class="app-footer">
+        Un proyecto de 
+        <a href="http://elespectador.com" target="_blank" class="espectador">El Espectador</a>
+        <a href="http://congresovisible.org" target="_blank" class="congresovisible">Congreso Visible</a>
+        
+        <a href="http://www.uniandes.edu.co" target="_blank" class="uniandes">Uniandes</a>
+        <a href="http://monoku.com" target="_blank" class="monoku">Monoku</a>
+    </footer>
+</section>

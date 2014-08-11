@@ -1,0 +1,29 @@
+<section id="candidates">
+	<h1 class="main-title">Candidatos <strong>Segunda Vuelta</strong></h1>
+	<button class="small find-your-candidate" ng-click="goTo('start-poll')">Encuentre su Candidato</button>
+	<ul class="candidates-list">
+		<li ng-repeat="candidate in candidates" ng-click="goTo('candidates/' + candidate.id)" class="candidate--in-list">
+			<div class="img-container candidate-color-{{candidate.id}}">
+				<img ng-src="{{candidate.img}}" alt="{{candidate.name}}" width="86" height="86">
+			</div>
+			<h2 class="candidate__name candidate-color-{{candidate.id}}">
+				{{candidate.name}}
+			</h2>
+			<h3 class="candidate__party candidate-color-{{candidate.id}}">
+				{{candidate.party}}
+			</h3>
+			<p class="candidate__catchword">
+				{{candidate.catchword}}
+			</p>
+			<button class="candidate__view-more">Ver más</button>
+		</li>
+	</ul>
+    <footer class="app-footer">
+        Un proyecto de 
+        <a href="http://elespectador.com" target="_blank" class="espectador">El Espectador</a>
+        <a href="http://congresovisible.org" target="_blank" class="congresovisible">Congreso Visible</a>
+        
+        <a href="http://www.uniandes.edu.co" target="_blank" class="uniandes">Uniandes</a>
+        <a href="http://monoku.com" target="_blank" class="monoku">Monoku</a>
+    </footer>
+</section>

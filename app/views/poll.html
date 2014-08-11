@@ -1,0 +1,94 @@
+<section id="poll">
+	<h1 class="main-title">Encuentre su <strong>candidato</strong></h1>
+	<nav class="answers-index">
+		<a href="javascript:void(0)" class="prev" ng-click="prev()">&#xe602;</a>
+		<i ng-repeat="vot in votes" class="{{ ( vot.choice === null ? 'unanswered' : 'answered' ) + ' ' + ( $index === index ? 'active' : '' ) }}" ng-click="animateTo($index)"></i>
+		<a href="javascript:void(0)" class="next" ng-click="next()">&#xe605;</a>
+	</nav>
+	<div class="left">
+		<article class="question">
+			<h2><div class="question-content">{{question.question}} <a href="javascript:void(0)" class="help" title="{{question.description}}" ng-hide="!question.description">Ayuda</a></div></h2>
+			<aside class="relevancy">
+				<h3 class="relevancy__title">¿Qu&eacute; tan relevante es este tema para usted?</h3>
+				<ol class="relevancy__level">
+					<li class="low {{vote.relevancy===false ? 'active' : '' }}" ng-click="setRelevance(false)">
+						<i></i>
+						<div class="relevancy-tooltip {{vote.relevancy===false?'active':''}}">
+							Poco
+						</div>
+					</li>
+					<li class="normal {{vote.relevancy===null ? 'active' : '' }}" ng-click="setRelevance(null)">
+						<i></i>
+						<div class="relevancy-tooltip {{vote.relevancy===null?'active':''}}">
+							Neutral
+						</div>
+					</li>
+					<li class="high {{vote.relevancy===true  ? 'active' : '' }}" ng-click="setRelevance(true)">
+						<i></i>
+						<div class="relevancy-tooltip {{vote.relevancy===true?'active':''}}">
+							Alta
+						</div>
+					</li>
+				</ol>
+			</aside>
+			<nav class="choices">
+				<button class="choice chioce--yes {{vote.choice === true ? 'active' : ''}}" ng-click="doVote(true)">Si</button>
+				<button class="choice chioce--no {{vote.choice === false ? 'active' : ''}}" ng-click="doVote(false)">No</button>
+				<span class="skipwrapper">
+					<a href="javascript:void(0)" ng-click="skip()" class="skip">Omitir</a>
+				</span>
+			</nav>
+		</article>
+	</div><aside class="recommendations" ng-switch="state">
+		<div class="recommendation" ng-switch-when="found"> 
+			<button class="show-match candidate-bgcolor-{{recommendations[0].id}}" ng-click="revealMatches()">Match</button>
+			<div class="recommendations__recommendation--first">
+				<a href="javascript:void(0)" class="hide-match" ng-click="hideMatches()">regresar</a>
+				<figure>
+					<figcaption class="candidate-bgcolor-{{recommendations[0].id}}">Concordancia <strong>{{recommendations[0].concordance}}</strong></figcaption><div class="img-container recommendations__recommendation__img-container candidate-color-{{recommendations[0].id}}">
+						<img class="recommendations__recommendation__img" ng-src="{{recommendations[0].imgMedium}}" width="71" height="71" alt="{{recommendations[0].name}}">
+					</div>
+				</figure>
+
+				<h4 class="recommendations__recommendation__name candidate-color-{{recommendations[0].id}}">{{recommendations[0].name}}</h4>
+				<h5 class="recommendations__recommendation__party candidate-color-{{recommendations[0].id}}">{{recommendations[0].party}}</h5>
+				<button class="recommendations__recommendation__result" ng-click="goTo('results')">Ver Resultado</button>
+				<hr>
+			</div>
+			<div class="recommendations__recommendation--second" title="<strong>{{recommendations[1].name}}</strong>">
+				<figure>
+					<figcaption class="candidate-bgcolor-{{recommendations[1].id}}"><strong>{{recommendations[1].concordance}}</strong></figcaption><div class="img-container recommendations__recommendation__img-container candidate-color-{{recommendations[1].id}}">
+						<img class="recommendations__recommendation__img" ng-src="{{recommendations[1].imgSmall}}" width="47" height="47" alt="{{recommendations[1].name}}">
+					</div>
+					<div class="candidate-data" ng-if="isLastRound">
+						<h4 class="recommendations__recommendation__name candidate-color-{{recommendations[1].id}}">{{recommendations[1].name}}</h4>
+						<h5 class="recommendations__recommendation__party candidate-color-{{recommendations[1].id}}">{{recommendations[1].party}}</h5>
+					</div>
+				</figure>
+			</div><div class="recommendations__recommendation--third" title="<strong>{{recommendations[2].name}}</strong>">
+				<figure ng-if="recommendations[2]">
+					<div class="img-container recommendations__recommendation__img-container candidate-color-{{recommendations[2].id}}">
+						<img class="recommendations__recommendation__img" ng-src="{{recommendations[2].imgSmall}}" width="47" height="47" alt="{{recommendations[2].name}}">
+					</div><figcaption class="candidate-bgcolor-{{recommendations[2].id}}"><strong>{{recommendations[2].concordance}}</strong></figcaption>
+				</figure>
+			</div>
+		</div>
+		<div class="recommendation__empty" ng-switch-default>
+			<div class="loader-container">
+				<div class="mask"></div>
+				<div class="progress" ng-style="{height: progress}"></div>
+			</div>
+			<p class="recommendation__empty__text">
+				A&uacute;n no contamos con suficiente informaci&oacute;n, contin&uacute;e con el cuestionario
+			</p>
+		</div>
+	</aside>
+    <footer class="app-footer">
+        Un proyecto de 
+        <a href="http://elespectador.com" target="_blank" class="espectador">El Espectador</a>
+        <a href="http://congresovisible.org" target="_blank" class="congresovisible">Congreso Visible</a>
+        
+        <a href="http://www.uniandes.edu.co" target="_blank" class="uniandes">Uniandes</a>
+        <a href="http://monoku.com" target="_blank" class="monoku">Monoku</a>
+    </footer>
+</section>
