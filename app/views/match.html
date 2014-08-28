@@ -1,0 +1,31 @@
+<section id="match">
+	<h1 class="main-title">Muchas <strong>Gracias</strong></h1>
+	<p class="intro">El candidato con mayor afinidad con usted es:</p>
+	<div class="match">
+		<figure>
+			<figcaption class="candidate-bgcolor-{{match.id}}">Concordancia <strong>{{match.concordance}}</strong></figcaption><div class="img-container match__img-container candidate-color-{{match.id}}">
+				<img class="match__img" ng-src="{{match.imgMedium}}" width="71" height="71" alt="{{match.name}}">
+			</div>
+		</figure>
+
+		<h4 class="match__name candidate-color-{{match.id}}">{{match.name}}</h4>
+		<h5 class="match__party candidate-color-{{match.id}}">{{match.party}}</h5>
+		<button class="match__result" ng-click="goTo('results')">Ver Resultado</button>
+		<button class="vote-intention" ng-click="goTo('intention')">&iquest;Por qui&eacute;n va a votar?</button>
+		<p class="your-vote" ng-if="isLastRound">Su voto puede marcar la diferencia, este 15 de Junio ejerza su derecho al voto</p>
+		<div class="left-actions">
+			<p>Compartir resultados</p>
+			<a href="javascript:void(0)" class="share-box__twitter" ng-click="postTwitter(match.name + ' es mi candidato presidencial para el 2014!', match.matchURL )">&#xe607;</a><a href="javascript:void(0)" class="share-box__facebook" ng-click="postFacebook(match.name + ' es mi candidato presidencial para el 2014!', match.matchURL )">&#xe608;</a>
+			<a href="javascript:void(0)" class="match__restart" ng-click="repeat()">Reiniciar</a>
+		</div>
+	</div>
+
+    <footer class="app-footer">
+        Un proyecto de 
+        <a href="http://elespectador.com" target="_blank" class="espectador">El Espectador</a>
+        <a href="http://congresovisible.org" target="_blank" class="congresovisible">Congreso Visible</a>
+        
+        <a href="http://www.uniandes.edu.co" target="_blank" class="uniandes">Uniandes</a>
+        <a href="http://monoku.com" target="_blank" class="monoku">Monoku</a>
+    </footer>
+</section>

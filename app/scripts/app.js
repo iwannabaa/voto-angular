@@ -25,8 +25,13 @@ angular
         controller: 'StartpollCtrl'
       }).when('/poll', {
         templateUrl: '/views/poll.html',
-        controller: 'PollCtrl',
-        preload: !0
+        controller: 'PollCtrl'
+      }).when('/match', {
+        templateUrl: '/views/match.html',
+        controller: 'MatchCtrl'
+      }).when('/results', {
+        templateUrl: '/views/results.html',
+        controller: 'ResultsCtrl'
       }).otherwise({
         redirectTo: '/'
       });
