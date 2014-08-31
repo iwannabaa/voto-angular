@@ -56,6 +56,12 @@
   background: url("../images/sprites.png") no-repeat;
 }
 
+*,*:before,*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "franklin-gothic-urw",sans-serif;
   line-height: 1.4;
@@ -77,16 +83,159 @@ h4 {
   font-weight: normal;
 }
 
+section {
+  background-color: #f3f2f2;
+  position: relative;
+}
+
 button {
   background-color: #004a8e;
   color: #fff;
   border: none;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 700;
   padding: .7em 1.6em;
   border-radius: 2px;
 
   &:hover {
     background-color: #003f7a;
+  }
+}
+
+.top-decorator {
+  height: 10px;
+  background-color: #e7d303;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 25%;
+  }
+
+  &::before {
+    right: 0;
+    background-color: #e73603;
+  }
+
+  &::after {
+    right: 25%;
+    background-color: #0089ff;
+  }
+}
+.app-footer {
+  background: #fff;
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  height: 32px;
+  right: 0;
+  line-height: 34px;
+  font-size: 0.7em;
+  font-weight: 500;
+  overflow: hidden;
+  color: #777;
+
+  .monoku,
+  .espectador,
+  .congresovisible,
+  .uniandes {
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    height: 32px;
+    vertical-align: middle;
+  }
+
+  .monoku {
+    width: 67px;
+    background-position: -75px -148px;
+  }
+
+  .espectador {
+    width: 75px;
+    background-position: 0 -149px;
+  }
+
+  .congresovisible {
+    background-position: -169px -180px;
+    width: 107px;
+  }
+
+  .uniandes {
+    width: 67px;
+    background-position: 0 -31px;
+  }
+}
+
+/* -------------------------------------------------------
+  Main Page
+------------------------------------------------------- */
+
+#main {
+  text-align: center;
+  height: 262px;
+  color: #fff;
+  background-color: #004a8e;
+
+  h1 {
+    font-size: 40px;
+    padding-top: 26px;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 47px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 .5em;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+
+    &::before,
+    &::after {
+      content: " ";
+      position: absolute;
+      border-top: 1px solid #fff;
+      width: 10%;
+    }
+
+    &::before {
+      left: 10%;
+    }
+
+    &::after {
+      right: 10%;
+    }
+  }
+
+  button {
+    padding: .8em 0 .7em;
+    margin: 0 20px 20px;
+    width: 255px;
+    font-size: 1.1em;
+    border: 2px solid #2a6da9;
+
+    &.view-all {
+      background-color: #003163;
+
+      &:hover {
+        background-color: #004a8e;
+        border-color: #fff;
+      }
+    }
+    &.go-to-poll {
+      background-color: #fff;
+      color: #003163;
+      border-color: #fff;
+
+      &:hover {
+        color: #fff;
+        background-color: #004a8e;
+      }
+    }
   }
 }
