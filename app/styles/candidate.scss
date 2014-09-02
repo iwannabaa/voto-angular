@@ -1,0 +1,80 @@
+/* -------------------------------------------------------
+  Candidate Page
+------------------------------------------------------- */
+
+#candidate {
+	padding: 15px 30px 45px;
+
+	.main-title {
+		padding: 0;
+		text-align: left;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	.candidate-info__data {
+		width: 320px;
+		display: inline-block;
+	}
+
+	.candidate__name {
+		font-weight: 900;
+		font-size: 1.3em;
+		margin: 0;
+		padding: 6px 0 0;
+	}
+
+	.candidate__party {
+		font-weight: 700;
+		font-size: 1.2em;
+		margin: 0;
+		padding: 0;
+	}
+
+	.candidate__catchword {
+		font-weight: 500;
+		font-size: .8em;
+		margin: .4em 0 .6em;
+		line-height: 1.1;
+	}
+
+	.app-nav {
+		position: absolute;
+		top: 90px;
+		right: 30px;
+
+		button {
+			margin-left: 20px;
+			width: 230px;
+			border: 1px solid $voto-blue;
+		}
+
+		.view-candidates {
+			color: $voto-blue;
+			background-color: transparent;
+
+			&:hover {
+				background-color: darken($voto-blue, 2%);
+				color: #fff;
+			}
+		}
+	}
+
+	.tabs__container {
+		border: 1px solid #ccc;
+		position: relative;
+		margin-top: 1.2em;
+
+		.tabs__nav {
+			button {
+				&:focus,
+				&:active {
+					outline: none;					
+				}
+			}
+		}
+	}
+}

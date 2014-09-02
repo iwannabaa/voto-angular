@@ -1,0 +1,49 @@
+/* -------------------------------------------------------
+  Footer
+------------------------------------------------------- */
+.app-footer {
+  background: #fff;
+  position: absolute;
+  z-index: 5;
+  bottom: -32px;
+  left: 0;
+  height: 32px;
+  right: 0;
+  line-height: 34px;
+  font-size: 0.7em;
+  font-weight: 500;
+  overflow: hidden;
+  color: #777;
+  text-align: center;
+
+  .monoku,
+  .espectador,
+  .congresovisible,
+  .uniandes {
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    height: 32px;
+    vertical-align: middle;
+  }
+
+  .monoku {
+    width: 67px;
+    background-position: -75px -148px;
+  }
+
+  .espectador {
+    width: 75px;
+    background-position: 0 -149px;
+  }
+
+  .congresovisible {
+    background-position: -169px -180px;
+    width: 107px;
+  }
+
+  .uniandes {
+    width: 67px;
+    background-position: 0 -31px;
+  }
+}

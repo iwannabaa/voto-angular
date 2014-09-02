@@ -1,0 +1,105 @@
+/* -------------------------------------------------------
+  Candidates Page
+------------------------------------------------------- */
+
+#candidates {
+	padding: 5px 15px 0;
+
+	.main-title {
+		padding: 10px;
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 0;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	.find-your-candidate {
+		position: absolute;
+		right: 25px;
+		top: 20px;
+		padding: .4em 1.1em .3em;
+
+		&:hover,
+		&:focus {
+			background-color: #003d75;
+		}
+	}
+
+	.candidates-list {
+		text-align: center;
+		padding: 0;
+		margin-top: 10px;
+	}
+
+	.candidate--in-list {
+		list-style: none;
+		display: inline-block;
+		width: 20%;
+		padding: 0 15px;
+		border-left: 1px solid #ccc;
+		cursor: pointer;
+		margin-bottom: 15px;
+		vertical-align: top;
+		height: 240px;
+		position: relative;
+
+		&:first-child {
+			border: none;
+		}
+
+		.candidate__view-more {
+			border: 1px solid $voto-blue;
+			color: $voto-blue;
+			background-color: transparent;
+			padding: .2em 0;
+			width: 140px;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			margin-left: -70px;
+		}
+
+		&:hover .candidate__view-more {
+			background-color: $voto-blue;
+			color: #fff;
+		}
+	}
+
+	.candidate__name,
+	.candidate__party {
+		text-align: left;
+		margin: 0;
+	}
+
+	.candidate__name {
+		font-weight: 900;
+		font-size: .9em;
+		text-transform: uppercase;
+		margin-top: .5em;
+	}
+
+	.candidate__party {
+		font-weight: 700;
+		font-size: .8em;
+	}
+
+	.candidate__catchword {
+		font-size: .7em;
+		text-align: left;
+		border-top: 1px solid #ccc;
+		margin-top: .8em;
+		padding-top: .8em;
+		font-weight: 500;
+		line-height: 1.1;
+		color: #222;
+		height: 46px;
+		position: absolute;
+		top: 156px;
+		width: 82%;
+		left: 8%;
+		margin-bottom: 0;	
+	}
+}

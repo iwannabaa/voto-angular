@@ -1,0 +1,68 @@
+/* -------------------------------------------------------
+  Main Page
+------------------------------------------------------- */
+
+#main {
+  text-align: center;
+  height: 262px;
+  color: #fff;
+  background-color: $voto-blue;
+
+  h1 {
+    font-size: 40px;
+    padding-top: 26px;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 47px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 .5em;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+
+    &::before,
+    &::after {
+      content: " ";
+      position: absolute;
+      border-top: 1px solid #fff;
+      width: 10%;
+    }
+
+    &::before {
+      left: 10%;
+    }
+
+    &::after {
+      right: 10%;
+    }
+  }
+
+  button {
+    padding: .8em 0 .7em;
+    margin: 0 20px 20px;
+    width: 255px;
+    font-size: 1.1em;
+    border: 2px solid #2a6da9;
+
+    &.view-all {
+      background-color: #003163;
+
+      &:hover {
+        background-color: $voto-blue;
+        border-color: #fff;
+      }
+    }
+    &.go-to-poll {
+      background-color: #fff;
+      color: #003163;
+      border-color: #fff;
+
+      &:hover {
+        color: #fff;
+        background-color: $voto-blue;
+      }
+    }
+  }
+}

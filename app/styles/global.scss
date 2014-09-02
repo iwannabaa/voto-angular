@@ -1,0 +1,153 @@
+/* -------------------------------------------------------
+  Global
+------------------------------------------------------- */
+
+.icons-sprite,
+.app-footer .monoku,
+.app-footer .espectador,
+.app-footer .congresovisible,
+.app-footer .uniandes,
+#main.last-round:before,
+#poll .relevancy .relevancy__level,
+#poll .recommendation__empty .mask,
+#intention .selected:after {
+  background: url("../images/sprites.png") no-repeat;
+}
+
+*,*:before,*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "franklin-gothic-urw",sans-serif;
+  line-height: 1.4;
+  color: #333;
+  max-width: 1000px;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 1.9em;
+  margin-top: 0;
+}
+
+h1, 
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+img {
+  vertical-align: middle;
+}
+
+section {
+  background-color: #f3f2f2;
+  position: relative;
+}
+
+button {
+  background-color: $voto-blue;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .9em;
+  padding: .7em 1.6em;
+  border-radius: 2px;
+  transition: all .1s linear;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover {
+    background-color: #003f7a;
+  }
+}
+
+.top-decorator {
+  height: 10px;
+  background-color: #e7d303;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 25%;
+  }
+
+  &::before {
+    right: 0;
+    background-color: #e73603;
+  }
+
+  &::after {
+    right: 25%;
+    background-color: #0089ff;
+  }
+}
+.main-title {
+  color: $voto-blue;
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-align: center;
+  font-size: 2em;
+  padding-top: .8em;
+
+  strong {
+    font-weight: 900;
+    -webkit-font-smoothing: auto;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    vertical-align: middle;
+    border-top: 1px solid $voto-blue;
+    margin: 0 .6em;
+  }
+}
+.candidate-color-1 {
+  border-color: #f7921e !important;
+  color: #f7921e !important;
+}
+
+.candidate-color-2 {
+  border-color: #d2ae00 !important;
+  color: #d2ae00 !important;
+}
+
+.candidate-color-3 {
+  border-color: #39b549 !important;
+  color: #39b549 !important;
+}
+
+.candidate-color-4 {
+  border-color: #0060a9 !important;
+  color: #0060a9 !important;
+}
+
+.candidate-color-5 {
+  border-color: #29abe1 !important;
+  color: #29abe1 !important;
+}
+
+.img-container {
+  border-radius: 50%;
+  display: inline-block;
+  padding: 3px;
+  border-style: solid;
+  border-width: 2px;
+  vertical-align: top;
+
+  img {
+    border-radius: 50%;
+  }
+}

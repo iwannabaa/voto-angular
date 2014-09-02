@@ -1,0 +1,41 @@
+/* -------------------------------------------------------
+  Boilerplate
+------------------------------------------------------- */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.centered {
+  max-width: 960px;
+  *width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
