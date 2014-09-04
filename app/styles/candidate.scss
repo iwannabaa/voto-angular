@@ -1,3 +1,5 @@
+@import "variables";
+
 /* -------------------------------------------------------
   Candidate Page
 ------------------------------------------------------- */
@@ -66,15 +68,68 @@
 	.tabs__container {
 		border: 1px solid #ccc;
 		position: relative;
-		margin-top: 1.2em;
+		margin-top: 2em;
 
 		.tabs__nav {
+			position: absolute;
+			bottom: 100%;
+			left: 35%;
+
 			button {
+				background-color: #ccc;
+				color: #777;
+				font-weight: 500;
+				margin-right: .5em;
+				border-radius: 0;
+				border: 1px solid #ccc;
+
 				&:focus,
 				&:active {
 					outline: none;					
 				}
 			}
+
+			.active {
+    			background-color: #f3f2f2;
+				border-bottom-color: #f3f2f2;;
+			}
+		}
+	}
+
+	.content {
+		padding: 1em 1.2em;
+	}
+
+	.answers {
+		font-weight: 700;
+		color: $voto-blue;
+
+		.question {
+			color: #555;
+			font-weight: 500;
+			margin: 0;
+		}
+
+		.response {
+			border: 1px solid $voto-blue;
+			margin: .5em 0 1em;
+			padding: .5em 0 .4em;
+			width: 80px;
+			border-radius: 3px;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		.explanation {
+			font-weight: 300;
+			font-size: .9em;
+			padding: .8em 1.2em .7em;
+			color: #666;
+			background-color: #e0e0e0;
+			width: 70%;
+			-webkit-font-smoothing: auto;
+			font-smooth: auto;
+			border-left: 4px solid #b8b8b8;
 		}
 	}
 }
