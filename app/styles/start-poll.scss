@@ -1,0 +1,41 @@
+@import "variables";
+
+/* -------------------------------------------------------
+  Start Poll Page
+------------------------------------------------------- */
+
+#start-poll {
+	padding-bottom: 30px;
+
+	.intro {
+		width: 60%;
+		margin: 1em auto;
+		text-align: center;
+		font-size: 1.2em;
+		color: #737377;
+		-webkit-font-smoothing: auto;
+		font-smooth: auto;
+	}
+
+	.centered {
+		text-align: center;
+	}
+
+	button {
+		width: 250px;
+		padding: 1em 0 .8em;
+		margin-top: 1em;
+	}
+
+	.go-to-candidates {
+		color: $voto-blue;
+		font-weight: 700;
+		display: inline-block;
+		margin-top: 1em;
+		height: 1.5em;
+		text-transform: uppercase;
+		font-size: .65em;
+		position: relative;
+
+	}
+}
