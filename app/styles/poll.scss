@@ -1,0 +1,190 @@
+@import "variables";
+
+/* -------------------------------------------------------
+  Poll Page
+------------------------------------------------------- */
+
+#poll {
+	overflow: hidden;
+
+	.main-title {
+		margin-bottom: 0;
+	}
+
+	.answers-index {
+		text-align: center;
+		padding: 0 1.5em;
+
+		i {
+			background-color: #ccc;
+			border-radius: 50%;
+			width: 6px;
+			height: 6px;
+			border: 2px solid #ccc;
+			display: inline-block;
+			margin: 0 4px;
+			vertical-align: middle;
+			cursor: pointer;
+
+			&.active,
+			&.answered {
+				width: 9px;
+				height: 9px;
+				border: none;
+			}
+
+			&.answered {
+				background-color: #888;
+			}
+
+			&.active {
+				background-color: $voto-blue;
+			}
+		}
+	}
+
+	.left {
+		width: 70%;
+		display: inline-block;
+		position: relative;
+		transform: translate3d(0,0,0);
+	}
+
+	.recommendations {
+		display: inline-block;
+		width: 30%;
+		text-align: center;
+		border-left: 1px solid #ccc;
+	}
+
+	.question {
+		
+		h2 {
+			margin: 0;
+			padding: 30px 40px 0 60px;
+			height: 130px;
+			font-size: 1.2em;
+			line-height: 1.3;
+			color: #737377;
+			-webkit-font-smoothing: auto;
+
+			.help {
+				color: $voto-blue;
+				font-size: .6em;
+				vertical-align: middle;
+				display: inline-block;
+			    text-transform: uppercase;
+			    font-weight: 700;
+			    margin-left: 0.4em;
+			}
+		}
+
+		.choices {
+			float: right;
+			padding-right: 30px;
+			padding-bottom: 5px;
+		}
+
+		.choice {
+			background-color: #fff;
+			border: 1px solid $voto-blue;
+			color: $voto-blue;
+			font-size: 1.5em;
+			padding: .3em 0 .2em;
+			width: 110px;
+			margin-right: 8px;
+
+			&.active,
+			&:focus,
+			&:active {
+				background-color: $voto-blue;
+				color: #fff;
+			}
+
+			&:focus,
+			&:active {
+				outline: none;
+			}
+		}
+
+		.skip {
+			display: inline-block;
+			color: $voto-blue;
+
+			&:hover {
+				color: darken($voto-blue, 10%);
+			}
+		}
+	}
+
+	.relevancy {
+		margin-left: 60px;
+		float: left;
+		padding-bottom: 2.3em;
+
+		h3 {
+			margin: 0 0 .5em;
+			color: $voto-blue;
+			font-weight: 500;
+			font-size: .9em;
+		}
+
+		.relevancy__level {
+			display: inline-block;
+			width: 284px;
+			height: 29px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			position: relative;
+
+			li {
+				position: absolute;
+				top: 12px;
+				margin-top: -5px;
+
+				&:hover i,
+				&.active i {
+					background-color: $voto-blue;
+				}
+			}
+
+			.low {
+				left: 7px;
+			}
+
+			.normal {
+				left: 129px;
+			}
+
+			.high {
+				left: 262px;
+			}
+
+			i {
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				background-color: #999;
+				display: block;
+				cursor: pointer;
+			}
+
+			.relevancy-tooltip {
+				position: absolute;
+				top: -24px;
+				left: 50%;
+				margin-left: -47px;
+				margin-top: 10px;
+				text-align: center;
+				color: #777;
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: .9em;
+				padding-top:36px;
+				width: 95px;
+				cursor: pointer;
+			}
+		}
+	}
+}
