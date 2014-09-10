@@ -12,12 +12,7 @@
 		<h5 class="match__party candidate-color-{{match.id}}">{{match.party}}</h5>
 		<button class="match__result" ng-click="goTo('results')">Ver Resultado</button>
 		<button class="vote-intention" ng-click="goTo('intention')">&iquest;Por qui&eacute;n va a votar?</button>
-		<p class="your-vote" ng-if="isLastRound">Su voto puede marcar la diferencia, este 15 de Junio ejerza su derecho al voto</p>
-		<div class="left-actions">
-			<p>Compartir resultados</p>
-			<a href="javascript:void(0)" class="share-box__twitter" ng-click="postTwitter(match.name + ' es mi candidato presidencial para el 2014!', match.matchURL )">&#xe607;</a><a href="javascript:void(0)" class="share-box__facebook" ng-click="postFacebook(match.name + ' es mi candidato presidencial para el 2014!', match.matchURL )">&#xe608;</a>
-			<a href="javascript:void(0)" class="match__restart" ng-click="repeat()">Reiniciar</a>
-		</div>
+		<p class="your-vote">Su voto puede marcar la diferencia, ejerza su derecho al voto</p>
 	</div>
 
     <footer class="app-footer">
