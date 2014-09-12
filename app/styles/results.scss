@@ -79,6 +79,7 @@
 		border: 1px solid #ccc;
 		height: 30px;
 		border-left: none;
+		position: relative;
 
 		&:first-child {
 			border-left: 1px solid #ccc;
@@ -130,6 +131,7 @@
 	}
 	.table-container {
 		padding-top: 40px;
+		padding-left: 150px;
 	}
 
 	.td {
