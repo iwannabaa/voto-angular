@@ -37,16 +37,16 @@
 		color: $voto-blue;
 		font-weight: 700;
 		text-transform: uppercase;
-		padding-left: 1em;
+		padding-left: 1.3em;
 		font-size: .8em;
 
 		&::before {
-			content: "\2039";
+			content: "\e602";
+			font-family: 'icomoon';
 			position: absolute;
 			left: 0;
-			top: -6px;
-			font-size:2em;
-			line-height: 1;
+			top: -1px;
+			font-size: 1.2em;
 		}
 
 		&:hover {
@@ -156,6 +156,14 @@
 			right: 0;
 			bottom: 0;
 			top: 0;
+		}
+
+		.matched {
+			font-family: 'icomoon';
+			color: #8cc63f;
+			position: absolute;
+			left: 1.2em;
+			top: .1em;
 		}
 
 		&.best-match {

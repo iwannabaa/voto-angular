@@ -16,6 +16,15 @@
 		text-align: center;
 		padding: 0 1.5em;
 
+		.prev,
+		.next {
+			font-family: 'icomoon';
+			color: $voto-blue;
+			text-decoration: none;
+			font-weight: 900;
+			vertical-align: middle;
+		}
+
 		i {
 			background-color: #ccc;
 			border-radius: 50%;
@@ -226,6 +235,14 @@
 			    text-transform: uppercase;
 			    font-weight: 700;
 			    margin-left: 0.4em;
+
+			    &::after {
+			    	display: inline-block;
+			    	font-family: 'icomoon';
+			    	content: "\e600";
+			    	margin-left: .3em;
+			    	vertical-align: top;
+			    }
 			}
 		}
 
