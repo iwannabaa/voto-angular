@@ -6,14 +6,18 @@
 
 #main {
   text-align: center;
-  height: 262px;
   color: #fff;
   background-color: $voto-blue;
+  padding-bottom:32px;
 
   h1 {
     font-size: 40px;
     padding-top: 26px;
     margin: 0;
+
+    @media screen and (max-width: 500px) {
+      font-size: 37px;
+    }
   }
 
   h2 {
@@ -24,12 +28,20 @@
     letter-spacing: 2px;
     word-spacing: 2px;
 
+    @media screen and (max-width: 500px) {
+      font-size: 40px;
+    }
+
     &::before,
     &::after {
       content: " ";
       position: absolute;
       border-top: 1px solid #fff;
       width: 10%;
+
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
     }
 
     &::before {

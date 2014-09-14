@@ -24,6 +24,19 @@
 		top: 20px;
 		padding: .4em 1.1em .3em;
 
+		@media screen and (max-width: 960px) {
+			top: 86px;
+			right: 15px;
+		}
+
+		@media screen and (max-width: 500px) {
+			position: static;
+			display: block;
+			width: 100%;
+			margin: .6em auto 0;
+			padding: .6em 0;
+		}
+
 		&:hover,
 		&:focus {
 			background-color: #003d75;
@@ -34,6 +47,14 @@
 		text-align: center;
 		padding: 0;
 		margin-top: 10px;
+
+		@media screen and (max-width: 960px) {
+			margin: 60px 0 0;
+		}
+
+		@media screen and (max-width: 500px) {
+			margin: 0;
+		}
 	}
 
 	.candidate--in-list {
@@ -47,6 +68,18 @@
 		vertical-align: top;
 		height: 240px;
 		position: relative;
+
+		@media screen and (max-width: 960px) {
+
+		}
+
+		@media screen and (max-width: 500px) {
+			text-align: left;
+	        padding-right: 0;
+	        height: auto;
+	        min-height: 116px;
+	        padding-bottom: 10px;
+		}
 
 		&:first-child {
 			border: none;

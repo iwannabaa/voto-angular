@@ -125,6 +125,10 @@ button {
     vertical-align: middle;
     border-top: 1px solid $voto-blue;
     margin: 0 .6em;
+
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
   }
 }
 .candidate-color-1 {
