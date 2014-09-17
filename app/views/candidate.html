@@ -19,11 +19,10 @@
 			<button ng-click="tab=0" class="{{tab==0?'active':''}}">Propuestas</button>
 			<button ng-click="tab=1" class="{{tab==1?'active':''}}">Respuestas</button>
 		</div>
-		<div class="content" ng-hide="tab!=0">
-		<div ng-hide=""></div>
+		<div class="content candidate-proposals" ng-hide="tab!=0">
 			{{candidate.proposals ? candidate.proposals : 'No se han agregado propuestas para este candidato'}}
 		</div>
-		<div class="content" ng-hide="tab!=1">
+		<div class="content candidate-answers" ng-hide="tab!=1">
 			<ol class="answers">
 				<li ng-repeat="response in candidate.responses track by $index">
 					<h4 class="question">{{questions[$index].question}}</h4>
