@@ -11,6 +11,11 @@
 	color: #737377;
 	padding-bottom: 80px;
 
+	@media screen and (max-width: 800px) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
 	.main-title {
 		text-align: left;
 		margin-bottom: 0;
@@ -28,6 +33,10 @@
 		margin-top: 0;
 		-webkit-font-smoothing: auto;
 		font-size: 1.1em;
+
+		@media screen and (max-width: 800px) {
+			margin-bottom: .4em;
+		}
 	}
 
 	.back {
@@ -39,6 +48,16 @@
 		text-transform: uppercase;
 		padding-left: 1.3em;
 		font-size: .8em;
+
+		@media screen and (max-width: 800px) {
+			position: relative;
+			left: auto;
+			top: auto;
+			margin: 0 0 1.2em;
+			display: block;
+			text-align: left;
+			width: 230px;
+		}
 
 		&::before {
 			content: "\e602";
@@ -58,6 +77,10 @@
 	aside {
 		display: inline-block;
 		vertical-align: bottom;
+
+		@media screen and (max-width: 660px) {
+			display: block;
+		}
 	}
 
 	.th,
@@ -119,19 +142,42 @@
 	.extra-mile {
 		width: 30px;
 		border-left: none;
+
+		@media screen and (max-width: 660px) {
+			display: none;
+		}
 	}
 	.index {
 		width: 40px;
+
+		@media screen and (max-width: 660px) {
+			width: 12%;
+		}
 	}
 	.response {
 		width: 130px;
+
+		@media screen and (max-width: 660px) {
+			width: 42%;
+		}
 	}
 	.match {
 		width: 85px;
+
+		@media screen and (max-width: 660px) {
+			width: 42%;
+		}
 	}
 	.table-container {
 		padding-top: 40px;
 		padding-left: 150px;
+
+		@media screen and (max-width: 900px) {
+			overflow: auto;
+			padding-bottom: 12px;
+			margin-bottom: -12px;
+			padding-left: 0;
+		}
 	}
 
 	.td {
@@ -193,13 +239,43 @@
 		bottom: -10px;
 	}
 
+	.force-width {
+		width: 370px;
+		margin: 0 auto;
+
+		@media screen and (max-width: 660px) {
+			.index {
+				width: 40px;
+			}
+
+			.response {
+				width: 100px;
+			}
+
+			.match {
+				width: 100px;
+			}
+		}
+	}
+
 	.actions {
 		margin-left: 15px;
+
+		@media screen and (max-width: 660px) {
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 2em;
+		}
 
 		button {
 			display: block;
 			width: 150px;
 			padding: .5em 0 .4em;
+
+			@media screen and (max-width: 660px) {
+				width: 120px;
+				display: inline-block;
+			}
 		}
 
 		.repeat {
@@ -208,10 +284,18 @@
 			color: $voto-blue;
 			margin-top: 10px;
 
+			@media screen and (max-width: 660px) {
+				margin-left: 10px;
+			}
+
 			&:hover {
 				color: #fff;
 				background-color: $voto-blue;
 			}
+		}
+
+		.second-close {
+			display: inline-block;
 		}
 	}
 }

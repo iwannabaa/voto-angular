@@ -8,6 +8,10 @@
 	overflow: hidden;
 	padding-bottom: 40px;
 
+	@media screen and (max-width: 700px) {
+		padding-bottom: 70px;
+	}
+
 	.main-title {
 		margin-bottom: 0;
 	}
