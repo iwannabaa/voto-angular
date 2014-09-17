@@ -58,6 +58,199 @@
 		display: inline-block;
 		position: relative;
 		transform: translate3d(0,0,0);
+
+		@media screen and (max-width: 700px) {
+			width: auto;
+			display: block;
+		}
+	}
+
+	.question {
+		
+		h2 {
+			margin: 0;
+			padding: 30px 40px 0 60px;
+			height: 130px;
+			font-size: 1.2em;
+			line-height: 1.3;
+			color: #737377;
+			-webkit-font-smoothing: auto;
+
+			@media screen and (max-width: 960px) {
+				height: auto;
+				margin-bottom: 1.3em;
+			}
+
+			@media screen and (max-width: 700px) {
+				padding: 20px 20px 0;
+			}
+
+			.help {
+				color: $voto-blue;
+				font-size: .6em;
+				vertical-align: middle;
+				display: inline-block;
+			    text-transform: uppercase;
+			    font-weight: 700;
+			    margin-left: 0.4em;
+
+			    &::after {
+			    	display: inline-block;
+			    	font-family: 'icomoon';
+			    	content: "\e600";
+			    	margin-left: .3em;
+			    	vertical-align: top;
+			    }
+			}
+		}
+
+		.choices {
+			float: right;
+			padding-right: 30px;
+			padding-bottom: 5px;
+
+			@media screen and (max-width: 960px) {
+				float: none;
+				text-align: center;
+				margin-top: .6em;
+			}
+
+			@media screen and (max-width: 350px) {
+				padding-right: 0;
+			}
+		}
+
+		.choice {
+			background-color: #fff;
+			border: 1px solid $voto-blue;
+			color: $voto-blue;
+			font-size: 1.5em;
+			padding: .3em 0 .2em;
+			width: 110px;
+			margin-right: 8px;
+
+			&.active,
+			&:focus,
+			&:active {
+				background-color: $voto-blue;
+				color: #fff;
+			}
+
+			&:focus,
+			&:active {
+				outline: none;
+			}
+		}
+
+		.skip {
+			display: inline-block;
+			color: $voto-blue;
+			position: relative;
+			font-weight: 700;
+
+			&::after {
+				font-size: 1em;
+				position: absolute;
+				content: "\e605";
+				left: 100%;
+				font-family: "icomoon";
+			}
+
+			&:hover {
+				color: darken($voto-blue, 10%);
+			}
+		}
+	}
+
+	.relevancy {
+		margin-left: 60px;
+		float: left;
+		padding-bottom: 2.3em;
+
+		@media screen and (max-width: 960px) {
+			float: none;
+			margin-left: 0;
+		}
+
+		h3 {
+			margin: 0 0 .5em;
+			color: $voto-blue;
+			font-weight: 500;
+			font-size: .9em;
+			text-align: center;
+
+			@media screen and (max-width: 700px) {
+				padding: 0 1em;
+				color: #777;
+			}
+		}
+
+		.relevancy__level {
+			display: inline-block;
+			width: 284px;
+			height: 29px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			position: relative;
+
+			@media screen and (max-width: 960px) {
+				display: block;
+				margin: auto;
+			}
+
+			li {
+				position: absolute;
+				top: 12px;
+				margin-top: -5px;
+
+				&:hover i,
+				&.active i {
+					background-color: $voto-blue;
+				}
+			}
+
+			.low {
+				left: 7px;
+			}
+
+			.normal {
+				left: 129px;
+			}
+
+			.high {
+				left: 262px;
+			}
+
+			i {
+				width: 15px;
+				height: 15px;
+				border-radius: 50%;
+				background-color: #999;
+				display: block;
+				cursor: pointer;
+			}
+
+			.relevancy-tooltip {
+				position: absolute;
+				top: -24px;
+				left: 50%;
+				margin-left: -47px;
+				margin-top: 10px;
+				text-align: center;
+				color: #777;
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: .9em;
+				padding-top:36px;
+				width: 95px;
+				cursor: pointer;
+
+				&.active {
+					color: $voto-blue;
+				}
+			}
+		}
 	}
 
 	.recommendations {
@@ -68,8 +261,24 @@
 		height: 200px;
 		margin-top: 10px;
 		vertical-align: top;
+		background-color: #f3f2f2;
+
+		@media screen and (max-width: 700px) {
+			position: absolute;
+			border: none;
+			top: 0;
+			left: 100%;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding-top: 80px;
+		}
 
 		.recommendation__empty {
+
+			@media screen and (max-width: 700px) {
+				display: none;
+			}
 
 			.loader-container {
 				position: relative;
@@ -110,10 +319,47 @@
 		.show-match {
 			visibility: hidden;
 			position: absolute;
+			background-color: $voto-blue;
+			color: #fff;
+			top: 18px;
+			right: 50%;
+			padding: .6em .8em;
+			border-radius: 3px 0 0 3px;
+			transition: all .5s linear;
+
+			@media screen and (max-width: 700px) {
+				visibility: visible;
+			}
+		}
+
+		&.found-match .show-match {
+			@media screen and (max-width: 700px) {
+				right: 100%;
+			}
 		}
 
 		.hide-match {
 			display: none;
+
+			@media screen and (max-width: 700px) {
+				display: block;
+				position: absolute;
+				margin: 0;
+				color: $voto-blue;
+				font-weight: 500;
+				top: 1.2em;
+				left: 2em;
+				text-decoration: none;
+
+				&::before {
+					content: "\e602";
+					font-family: "icomoon";
+					position: absolute;
+					right: 100%;
+					top: 0;
+					margin-right: 3px;
+				}
+			}
 		}
 
 		.recommendations__recommendation--first {
@@ -215,149 +461,6 @@
 		}
 	}
 
-
-	.question {
-		
-		h2 {
-			margin: 0;
-			padding: 30px 40px 0 60px;
-			height: 130px;
-			font-size: 1.2em;
-			line-height: 1.3;
-			color: #737377;
-			-webkit-font-smoothing: auto;
-
-			.help {
-				color: $voto-blue;
-				font-size: .6em;
-				vertical-align: middle;
-				display: inline-block;
-			    text-transform: uppercase;
-			    font-weight: 700;
-			    margin-left: 0.4em;
-
-			    &::after {
-			    	display: inline-block;
-			    	font-family: 'icomoon';
-			    	content: "\e600";
-			    	margin-left: .3em;
-			    	vertical-align: top;
-			    }
-			}
-		}
-
-		.choices {
-			float: right;
-			padding-right: 30px;
-			padding-bottom: 5px;
-		}
-
-		.choice {
-			background-color: #fff;
-			border: 1px solid $voto-blue;
-			color: $voto-blue;
-			font-size: 1.5em;
-			padding: .3em 0 .2em;
-			width: 110px;
-			margin-right: 8px;
-
-			&.active,
-			&:focus,
-			&:active {
-				background-color: $voto-blue;
-				color: #fff;
-			}
-
-			&:focus,
-			&:active {
-				outline: none;
-			}
-		}
-
-		.skip {
-			display: inline-block;
-			color: $voto-blue;
-
-			&:hover {
-				color: darken($voto-blue, 10%);
-			}
-		}
-	}
-
-	.relevancy {
-		margin-left: 60px;
-		float: left;
-		padding-bottom: 2.3em;
-
-		h3 {
-			margin: 0 0 .5em;
-			color: $voto-blue;
-			font-weight: 500;
-			font-size: .9em;
-		}
-
-		.relevancy__level {
-			display: inline-block;
-			width: 284px;
-			height: 29px;
-			margin: 0;
-			padding: 0;
-			list-style: none;
-			position: relative;
-
-			li {
-				position: absolute;
-				top: 12px;
-				margin-top: -5px;
-
-				&:hover i,
-				&.active i {
-					background-color: $voto-blue;
-				}
-			}
-
-			.low {
-				left: 7px;
-			}
-
-			.normal {
-				left: 129px;
-			}
-
-			.high {
-				left: 262px;
-			}
-
-			i {
-				width: 15px;
-				height: 15px;
-				border-radius: 50%;
-				background-color: #999;
-				display: block;
-				cursor: pointer;
-			}
-
-			.relevancy-tooltip {
-				position: absolute;
-				top: -24px;
-				left: 50%;
-				margin-left: -47px;
-				margin-top: 10px;
-				text-align: center;
-				color: #777;
-				text-transform: uppercase;
-				font-weight: 700;
-				font-size: .9em;
-				padding-top:36px;
-				width: 95px;
-				cursor: pointer;
-
-				&.active {
-					color: $voto-blue;
-				}
-			}
-		}
-	}
 	.app-footer {
 		bottom: 0;
 	}
