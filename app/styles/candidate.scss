@@ -7,6 +7,11 @@
 #candidate {
 	padding: 15px 30px 45px;
 
+	@media screen and (max-width: 600px) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
 	.main-title {
 		padding: 0;
 		text-align: left;
@@ -20,6 +25,11 @@
 	.candidate-info__data {
 		width: 320px;
 		display: inline-block;
+
+		@media screen and (max-width: 580px) {
+			width: 100%;
+			padding-left: 0;
+		}
 	}
 
 	.candidate__name {
@@ -48,10 +58,38 @@
 		top: 90px;
 		right: 30px;
 
+		@media screen and (max-width: 1000px) {
+			top: 22px;
+		}
+
+		@media screen and (max-width: 875px) {
+			width: 240px;
+			text-align: right;
+		}
+
+		@media screen and (max-width: 815px) {
+			width: auto;
+			position: static;
+			text-align: left;
+			margin:  1em 0 3.7em;
+		}
+
 		button {
 			margin-left: 20px;
 			width: 230px;
 			border: 1px solid $voto-blue;
+
+			@media screen and (max-width: 875px) {
+				margin-bottom: 10px;
+			}
+
+			@media screen and (max-width: 815px) {
+				margin: 0;
+			}
+
+			@media screen and (max-width: 580px) {
+				margin: 6px 0;
+			}
 		}
 
 		.view-candidates {
@@ -75,6 +113,10 @@
 			bottom: 100%;
 			left: 35%;
 
+			@media screen and (max-width: 815px) {
+				left: -1px;
+			}
+
 			button {
 				background-color: #ccc;
 				color: #777;
@@ -82,6 +124,11 @@
 				margin-right: .5em;
 				border-radius: 0;
 				border: 1px solid #ccc;
+
+				@media screen and (max-width: 580px) {
+					font-size: .9em;
+					padding: .8em;
+				}
 
 				&:focus,
 				&:active {
@@ -103,6 +150,10 @@
 	.answers {
 		font-weight: 700;
 		color: $voto-blue;
+
+		@media screen and (max-width: 580px) {
+			padding-left: 1.3em;
+		}
 
 		.question {
 			color: #555;
@@ -130,6 +181,10 @@
 			-webkit-font-smoothing: auto;
 			font-smooth: auto;
 			border-left: 4px solid #b8b8b8;
+
+			@media screen and (max-width: 600px) {
+				width: auto;
+			}
 		}
 	}
 }
